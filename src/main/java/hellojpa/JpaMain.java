@@ -12,12 +12,9 @@ public class JpaMain {
         tx.begin();
 
         try {
-//            hellojpa.Member findMember = em.find(hellojpa.Member.class, 1L);
-            List<Member> result = em.createQuery("select m from Member as m", Member.class).setFirstResult(1).setMaxResults(5).getResultList();
 
-            for (Member member : result) {
-                System.out.println("member.getName() = " + member.getName());
-            }
+
+
 
             tx.commit();
 
