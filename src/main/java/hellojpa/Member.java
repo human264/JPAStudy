@@ -1,29 +1,39 @@
 package hellojpa;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import lombok.Data;
+
+import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
+@Data
 public class Member {
 
     @Id
+    @GeneratedValue
+    @Column(name = "MEMBER_ID")
     private Long id;
-    private String name;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @Column(name = "USERNAME")
+    private String username;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    @Column(name = "TEAM_ID")
+    private Long teamId;
 
     public Long getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }
